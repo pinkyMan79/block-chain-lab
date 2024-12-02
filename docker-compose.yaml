@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: blockchain_postgres
+    environment:
+      POSTGRES_USER: blockchain_user
+      POSTGRES_PASSWORD: blockchain_pass
+      POSTGRES_DB: blockchain_db
+    ports:
+      - "5435:5435"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
